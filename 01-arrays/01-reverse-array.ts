@@ -1,37 +1,25 @@
-// const arr:number[]=[10,20,30,40,50];
+function reverseArray(arr: number[]): number[] {
+  let left = 0;                  // Pehla index
+  let right = arr.length - 1;    // Aakhiri index
 
-// console.log(arr[arr.length-1])
+  while (left < right) {
+    // 1. Swap logic (jo tumne pehle temp variable se seekha)
+    let temp = arr[left];
+    arr[left] = arr[right];
+    arr[right] = temp;
 
-// const numbers:number[]=[5,10,15]
-// console.log(numbers)
-// numbers[1]=99
-// console.log(numbers)
+    // 2. Left ko aage aur Right ko peeche khisko
+    left++;
+    right--;
+  }
 
-// Swap Do elements
-
-// let a = 10;
-// let b = 20;
-
-// // Third variable (temp) use karke swap:
-// let temp = a; // temp = 10
-// a = b;        // a = 20
-// b = temp;     // b = 10
-
-// console.log("a:", a, "b:", b); // Output: a: 20, b: 10
-
-// const numbers:number[]=[100,200]
-// let temp=numbers[0]
-// numbers[0]=numbers[1]
-// numbers[1]=temp
-// console.log(numbers)
-
-
-const numbers:number[]=[10,20,30,40,50]
-for(let i=0; i<numbers.length; i++){
-    console.log(numbers[i])
+  return arr;
 }
-console.log("Reverse Order")
-const numbers1:number[]=[10,20,30,40,50]
-for(let i=numbers1.length-1; i>=0; i--){
-    console.log(numbers1[i])
-}
+
+// Verification
+const numbers = [10, 20, 30, 40, 50];
+console.log("Before Reverse:", numbers);
+
+reverseArray(numbers);
+
+console.log("After Reverse:", numbers);

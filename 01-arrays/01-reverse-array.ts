@@ -1,9 +1,9 @@
 function reverseArray(arr: number[]): number[] {
-  let left = 0;                  // Pehla index
-  let right = arr.length - 1;    // Aakhiri index
+  let left = 0;                  // Pehla index 0
+  let right = arr.length - 1;    // Aakhiri index 4
 
   while (left < right) {
-    // 1. Swap logic (jo tumne pehle temp variable se seekha)
+    // 1. Swap logic
     let temp = arr[left];
     arr[left] = arr[right];
     arr[right] = temp;
